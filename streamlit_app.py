@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import your existing functions
 from assistant import load_db, search_chunks, generate_answer
-from replit_storage import safe_load_json, safe_save_json
+from streamlit_storage import safe_load_json, safe_save_json
 
 # Streamlit configuration
 st.set_page_config(
