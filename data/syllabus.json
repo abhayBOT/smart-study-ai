@@ -1,0 +1,201 @@
+{
+    "class8": {
+    "Science": [
+        "1. Crop Production and Management",
+        "2. Microorganisms Friend and Foe",
+        "3. Synthetic Fibres and Plastics",
+        "4. Materials Metals and Non-Metals",
+        "5. Coal and Petroleum",
+        "6. Combustion and Flame",
+        "7. Conservation of Plants and Animals",
+        "8. Cell Structure and Functions",
+        "9. Reproduction in Animals",
+        "10. Reaching the Age of Adolescence",
+        "11. Force and Pressure",
+        "12. Friction",
+        "13. Sound",
+        "14. Chemical Effects of Electric Current",
+        "15. Some Natural Phenomena",
+        "16. Light",
+        "17. Stars and the Solar System",
+        "18. Pollution of Air and Water"
+    ],
+
+    "Math Book 1": [
+        "1. Rational Numbers",
+        "2. Linear Equations in One Variable",
+        "3. Understanding Quadrilaterals",
+        "4. Practical Geometry",
+        "5. Data Handling",
+        "6. Squares and Square Roots",
+        "7. Cubes and Cube Roots",
+        "8. Comparing Quantities"
+    ],
+
+    "Math Book 2": [
+        "9. Algebraic Expressions and Identities",
+        "10. Visualising Solid Shapes",
+        "11. Mensuration",
+        "12. Exponents and Powers",
+        "13. Direct and Inverse Proportions",
+        "14. Factorisation",
+        "15. Introduction to Graphs",
+        "16. Playing with Numbers"
+    ],
+
+    "Social Science History": [
+        "1. How When and Where",
+        "2. From Trade to Territory",
+        "3. Ruling the Countryside",
+        "4. Tribals Dikus and the Vision of a Golden Age",
+        "5. When People Rebel 1857 and After",
+        "6. Civilising the Native Educating the Nation",
+        "7. Women Caste and Reform",
+        "8. The Making of the National Movement"
+    ],
+
+    "Social Science Geography": [
+        "1. Resources",
+        "2. Land Soil Water Natural Vegetation and Wildlife Resources",
+        "3. Mineral and Power Resources",
+        "4. Agriculture",
+        "5. Industries",
+        "6. Human Resources"
+    ],
+
+    "Social Science Civics": [
+        "1. The Indian Constitution",
+        "2. Understanding Secularism",
+        "3. Why Do We Need a Parliament",
+        "4. Understanding Laws",
+        "5. Judiciary",
+        "6. Understanding Our Criminal Justice System",
+        "7. Understanding Marginalisation",
+        "8. Confronting Marginalisation",
+        "9. Public Facilities",
+        "10. Law and Social Justice"
+    ]
+},
+"class9": {
+"Science": [
+"1. Matter in Our Surroundings",
+"2. Is Matter Around Us Pure",
+"3. Atoms and Molecules",
+"4. Structure of the Atom",
+"5. The Fundamental Unit of Life",
+"6. Tissues",
+"7. Motion",
+"8. Force and Laws of Motion",
+"9. Gravitation",
+"10.Work and Energy",
+"11. Sound",
+"12. Improvement in Food Resources"
+],
+"Math": [
+"1. Number System",
+"2. Polynomials",
+"3. Coordinate Geometry",
+"4. Linear Equations in Two Variables",
+"5. Introduction to Euclid Geometry",
+"6. Lines and Angles",
+"7. Triangles",
+"8. Quadrilaterals",
+"9. Circles",
+"10.Heron’s Formula",
+"11. Surface Areas and Volumes",
+"12. Statitics"
+],
+"Social_Science":[
+"History",
+"Section I: Events and Processes",
+"1. The French Revolution",
+"2. Socialism in Europe and the Russian Revolution ",
+"3. Nazism and the Rise of Hitler",
+"Section II: Livelihoods, Economies and Societies",
+"4. Forest Society and Colonialism",
+"5. Pastoralists in the Modern World",
+"GEOGRAPHY",
+"1. India – Size and Location",
+"2. Physical Features of India",
+"3. Drainage",
+"4. Climate",
+"5. Natural Vegetation and Wildlife",
+"Political Science",
+"1. What is Democracy? Why democracy? ",
+"2. Constitutional Design",
+"3. Electroal Politics",
+"4.Working Of Institutions",
+"5.Democratic Rights",
+"ECONOMICS",
+"1. The Story of Village Palampur",
+"2. People as Resource",
+"3. Poverty as a Challenge",
+"4. Food Security in India"
+]
+},
+
+"class10": {
+"Science": [
+"1. Chemical Reactions and Equations",
+"2. Acids, Bases and Salts",
+"3. Metals and Non-metals",
+"4. Carbon and its Compounds",
+"5. Life Processes",
+"6. Control and Coordination",
+"7. How do Organisms Reproduce",
+"8. Heredity",
+"9. Light  Reflection and Refraction",
+"10. The Human Eye and the Colourful World",
+"11. Electricity",
+"12. Magnetic Effects of Electric Current",
+"13. Our Environment"
+],
+"Math": [
+"1. Real Numbers",
+"2. Polynomials",
+"3. Pair of Linear Equations in Two Variables",
+"4. Quadratic Equations",
+"5. Arithmetic Progressions",
+"6. Triangles",
+"7. Coordinate Geometry",
+"8. Intoduction to Trigonometry",
+"9. Some Applications of Trigonometry",
+"10. Circles",
+"11. Areas Related to Circles",
+"12. Surface Areas and Volumes",
+"13. Statistics",
+"14.Probability"
+],
+"Social_Science": [
+"HISTORY",
+"Section I: Events and Processes",
+"I. The Rise of Nationalism in Europe",
+"II. Nationalism in India",
+"Section II: Livelihoods, Economies and Societies",
+"III. The Making of a Global World",
+"IV. The Age of Industrialisation",
+"Section III: Everyday Life, Culture and Politics",
+"V. Print Culture and the Modern World",
+"Geography",
+"1. Resources and Development",
+"2. Forest and Wildlife Resources ",
+"3. Water Resources",
+"4. Agriculture",
+"5. Minerals and Energy Resources",
+"6. Manufacturing Industries",
+"7. Lifelines of National Economy",
+"POLITICAL SCIENCE",
+"1. Power-sharing ",
+"2. Federalism ",
+"3. Gender, Religion and Caste",
+"4. Political Parties",
+"5. Outcomes of Democracy",
+"ECONOMICS",
+"1. Development",
+"2. Sectors of The Indian Economy",
+"3. Money And Credit",
+"4. Globilisation And The Indian Economy",
+"5. Consumer Rights"
+]
+}
+}

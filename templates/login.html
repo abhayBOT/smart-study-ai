@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SmartStudy AI Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            position:relative;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(59,130,246,0.25), transparent 22%),
+                radial-gradient(circle at 80% 25%, rgba(139,92,246,0.18), transparent 20%),
+                radial-gradient(circle at 70% 80%, rgba(14,165,233,0.14), transparent 20%),
+                radial-gradient(circle at 20% 75%, rgba(16,185,129,0.12), transparent 18%),
+                linear-gradient(135deg,#020617,#0f172a,#111827,#1e293b);
+        }
+
+        body::before,
+        body::after{
+            content:"";
+            position:absolute;
+            border-radius:50%;
+            filter:blur(100px);
+            animation:moveGlow 9s infinite alternate ease-in-out;
+            z-index:0;
+        }
+
+        body::before{
+            width:320px;
+            height:320px;
+            background:rgba(59,130,246,0.18);
+            left:-100px;
+            top:-60px;
+        }
+
+        body::after{
+            width:280px;
+            height:280px;
+            background:rgba(168,85,247,0.14);
+            right:-70px;
+            bottom:-50px;
+        }
+
+        @keyframes moveGlow{
+            from{transform:translate(0,0);}
+            to{transform:translate(30px,18px);}
+        }
+
+        .grid{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size:42px 42px;
+            z-index:0;
+        }
+
+        .formula-bg{
+            position:absolute;
+            left:25px;
+            top:70px;
+            color:rgba(255,255,255,0.07);
+            font-size:22px;
+            line-height:58px;
+            font-weight:600;
+            transform:rotate(-8deg);
+            z-index:1;
+            user-select:none;
+        }
+
+        .formula-bg2{
+            position:absolute;
+            right:40px;
+            bottom:90px;
+            color:rgba(255,255,255,0.06);
+            font-size:20px;
+            line-height:54px;
+            font-weight:600;
+            transform:rotate(7deg);
+            z-index:1;
+            user-select:none;
+        }
+
+        .brain{
+            position:absolute;
+            right:70px;
+            top:80px;
+            width:300px;
+            height:300px;
+            z-index:1;
+        }
+
+        .node{
+            position:absolute;
+            width:10px;
+            height:10px;
+            border-radius:50%;
+            background:rgba(96,165,250,0.9);
+            box-shadow:0 0 16px rgba(96,165,250,0.8);
+            animation:blink 2s infinite alternate;
+        }
+
+        .n1{top:20px;left:60px;}
+        .n2{top:70px;left:200px;}
+        .n3{top:130px;left:100px;}
+        .n4{top:200px;left:220px;}
+        .n5{top:250px;left:80px;}
+        .n6{top:120px;left:250px;}
+
+        .line{
+            position:absolute;
+            height:2px;
+            background:rgba(96,165,250,0.20);
+            transform-origin:left center;
+            animation:linePulse 3s infinite alternate;
+        }
+
+        .l1{width:150px;top:25px;left:65px;transform:rotate(17deg);}
+        .l2{width:90px;top:78px;left:160px;transform:rotate(118deg);}
+        .l3{width:135px;top:138px;left:105px;transform:rotate(28deg);}
+        .l4{width:150px;top:255px;left:85px;transform:rotate(-12deg);}
+        .l5{width:150px;top:135px;left:115px;transform:rotate(-8deg);}
+
+        @keyframes blink{
+            from{opacity:0.4;}
+            to{opacity:1;}
+        }
+
+        @keyframes linePulse{
+            from{opacity:0.2;}
+            to{opacity:0.7;}
+        }
+
+        .symbol{
+            position:absolute;
+            font-size:34px;
+            font-weight:bold;
+            opacity:0.16;
+            animation:floatSym 7s infinite alternate ease-in-out;
+            user-select:none;
+            z-index:1;
+        }
+
+        .s1{left:14%;top:14%;color:#60a5fa;}
+        .s2{left:82%;top:18%;color:#a78bfa;}
+        .s3{left:18%;bottom:18%;color:#34d399;}
+        .s4{right:14%;bottom:16%;color:#f472b6;}
+        .s5{left:40%;top:8%;color:#facc15;}
+        .s6{right:36%;bottom:8%;color:#fb923c;}
+        .s7{left:8%;top:45%;color:#22d3ee;}
+        .s8{right:8%;top:50%;color:#4ade80;}
+
+        @keyframes floatSym{
+            from{transform:translateY(0px);}
+            to{transform:translateY(-16px);}
+        }
+
+        .container{
+            width:430px;
+            background:rgba(255,255,255,0.08);
+            backdrop-filter:blur(20px);
+            border:1px solid rgba(255,255,255,0.14);
+            border-radius:24px;
+            padding:34px;
+            box-shadow:0 28px 80px rgba(0,0,0,0.52);
+            color:white;
+            z-index:10;
+            position:relative;
+        }
+
+        .logo{text-align:center;margin-bottom:18px;}
+        .logo h1{font-size:31px;font-weight:700;}
+        .logo p{font-size:13px;color:#cbd5e1;margin-top:6px;}
+
+        .subtitle{
+            text-align:center;
+            font-size:12px;
+            color:#94a3b8;
+            margin-bottom:20px;
+            line-height:1.6;
+        }
+
+        .error{
+            background:#fee2e2;
+            color:#b91c1c;
+            padding:10px;
+            border-radius:10px;
+            margin-bottom:14px;
+            text-align:center;
+            font-size:14px;
+        }
+
+        .tabs{
+            display:flex;
+            gap:10px;
+            margin-bottom:16px;
+        }
+
+        .tab{
+            flex:1;
+            padding:11px;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+            background:rgba(255,255,255,0.08);
+            color:white;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .tab.active{
+            background:linear-gradient(135deg,#2563eb,#1d4ed8);
+        }
+
+        input,select{
+            width:100%;
+            padding:13px;
+            margin-top:10px;
+            border:none;
+            border-radius:10px;
+            outline:none;
+            font-size:14px;
+            background:rgba(255,255,255,0.95);
+        }
+
+        .role-label{
+            margin-top:14px;
+            margin-bottom:3px;
+            font-size:13px;
+            color:#cbd5e1;
+        }
+
+        .btn{
+            width:100%;
+            padding:13px;
+            border:none;
+            border-radius:10px;
+            margin-top:15px;
+            cursor:pointer;
+            font-size:15px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .btn:hover{transform:translateY(-1px);}
+
+        .btn-login{
+            background:linear-gradient(135deg,#2563eb,#1d4ed8);
+            color:white;
+        }
+
+        .btn-signup{
+            background:linear-gradient(135deg,#16a34a,#15803d);
+            color:white;
+        }
+
+        .btn-google{
+            background:linear-gradient(135deg,#dc2626,#b91c1c);
+            color:white;
+        }
+
+        .divider{
+            text-align:center;
+            margin:15px 0;
+            font-size:12px;
+            color:#94a3b8;
+            position:relative;
+        }
+
+        .divider::before,.divider::after{
+            content:"";
+            position:absolute;
+            top:50%;
+            width:40%;
+            height:1px;
+            background:rgba(255,255,255,0.15);
+        }
+
+        .divider::before{left:0;}
+        .divider::after{right:0;}
+
+        .footer{
+            text-align:center;
+            margin-top:18px;
+            font-size:12px;
+            color:#94a3b8;
+        }
+
+        @media(max-width:900px){
+            .formula-bg,.formula-bg2,.brain,.symbol{display:none;}
+        }
+
+        @media(max-width:500px){
+            .container{width:92%;}
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid"></div>
+
+<div class="formula-bg">
+    x² + y² = z²<br>
+    E = mc²<br>
+    F = ma<br>
+    H₂O + CO₂ → C₆H₁₂O₆
+</div>
+
+<div class="formula-bg2">
+    sin²θ + cos²θ = 1<br>
+    Na + Cl → NaCl<br>
+    a² + 2ab + b²
+</div>
+
+<div class="brain">
+    <div class="node n1"></div><div class="node n2"></div><div class="node n3"></div>
+    <div class="node n4"></div><div class="node n5"></div><div class="node n6"></div>
+    <div class="line l1"></div><div class="line l2"></div><div class="line l3"></div>
+    <div class="line l4"></div><div class="line l5"></div>
+</div>
+
+<div class="symbol s1">📘</div>
+<div class="symbol s2">🧠</div>
+<div class="symbol s3">⚛</div>
+<div class="symbol s4">📐</div>
+<div class="symbol s5">🧪</div>
+<div class="symbol s6">🌍</div>
+<div class="symbol s7">✏</div>
+<div class="symbol s8">🔬</div>
+
+<div class="container">
+
+    <div class="logo">
+        <h1>SmartStudy AI</h1>
+        <p>AI Academic Intelligence Platform</p>
+    </div>
+
+    <div class="subtitle">
+        LLM Powered • RAG Based • Smart Student Learning Environment
+    </div>
+
+    {% if error %}
+    <div class="error">{{error}}</div>
+    {% endif %}
+
+    <div class="tabs">
+        <button type="button" class="tab active" id="loginTab" onclick="showLogin()">Login</button>
+        <button type="button" class="tab" id="signupTab" onclick="showSignup()">Signup</button>
+    </div>
+
+    <div id="loginForm">
+        <form method="POST" action="/login">
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit" class="btn btn-login">Login to Dashboard</button>
+        </form>
+
+        <div class="divider">OR</div>
+
+        <form method="GET" action="/continue_google">
+            <button type="submit" class="btn btn-google">Continue with Google</button>
+        </form>
+    </div>
+
+    <div id="signupForm" style="display:none;">
+        <form method="POST" action="/signup">
+            <input type="text" name="new_username" placeholder="Create Username" required>
+            <input type="password" name="new_password" placeholder="Create Password" required>
+
+            <div class="role-label">Choose Your Access Role</div>
+            <select name="role" required>
+                <option value="Student">🎓 Student</option>
+                <option value="Teacher">👩‍🏫 Teacher</option>
+            </select>
+
+            <button type="submit" class="btn btn-signup">Create Account</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        Intelligent Learning Through Artificial Intelligence
+    </div>
+</div>
+
+<script>
+function showLogin(){
+    document.getElementById("loginForm").style.display="block";
+    document.getElementById("signupForm").style.display="none";
+    document.getElementById("loginTab").classList.add("active");
+    document.getElementById("signupTab").classList.remove("active");
+}
+
+function showSignup(){
+    document.getElementById("loginForm").style.display="none";
+    document.getElementById("signupForm").style.display="block";
+    document.getElementById("signupTab").classList.add("active");
+    document.getElementById("loginTab").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
